@@ -68,7 +68,9 @@ function Navbar() {
           </a>
         </nav>
         <div className="flex items-center gap-4">
-          <ThemeToggle />
+         <div className="hidden  md:block">
+         <ThemeToggle />
+         </div>
           <Link href="/login">
           <Button variant="outline" size="sm" className="transition-all hover:border-primary hover:text-primary">
             Log in
