@@ -2,6 +2,7 @@
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Bot } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
 function Navbar() {
@@ -21,7 +22,7 @@ function Navbar() {
       <div className="container flex h-16 items-center justify-between">
         <Link href="/">
           <div className="flex items-center gap-2">
-            <Bot className="h-6 w-6 text-primary animate-pulse-slow" />
+            <Image src="/syncmind.png" alt="title"  className="flex scale-130"  height={30} width={30}/>
             <span className="text-xl font-bold gradient-text">SyncMind</span>
           </div>
         </Link>

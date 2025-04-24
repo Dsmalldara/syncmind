@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from "next/link"
-import { Bot } from 'lucide-react'
+import Image from "next/image"
 function Footer() {
   return (
     <footer className="border-t py-12 bg-muted">
@@ -8,7 +8,7 @@ function Footer() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div className="space-y-4">
           <div className="flex items-center gap-2 ">
-            <Bot className="h-6 w-6 text-primary animate-pulse-slow" />
+               <Image src="/syncmind.png" alt="title"  className="flex scale-130"  height={30} width={30}/>
             <span className="text-xl font-bold gradient-text">SyncMind</span>
           </div>
           <p className="text-muted-foreground">

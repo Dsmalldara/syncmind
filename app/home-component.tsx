@@ -1,6 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ArrowRight, Bot, Check, FileText, Lock, MessageSquare, Settings, Sparkles, Upload } from "lucide-react"
 import Link from "next/link"
