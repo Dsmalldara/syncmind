@@ -372,21 +372,21 @@ export default function Home() {
       <p className="text-muted-foreground">For small teams getting started with AI onboarding</p>
     </div>
     <div className="my-6">
-      <span className="text-4xl font-bold gradient-text">$19</span>
-      <span className="text-muted-foreground">/month</span>
+      <span className="text-4xl font-bold gradient-text">Free</span>
+   
     </div>
     <ul className="space-y-3 mb-8 flex-1">
       <li className="flex items-start gap-2">
         <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-        <span>Up to 5 team members</span>
+        <span>Up to 3 team members</span>
       </li>
       <li className="flex items-start gap-2">
         <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-        <span>100 MB document storage</span>
+        <span>50 MB document storage</span>
       </li>
       <li className="flex items-start gap-2">
         <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-        <span>100 questions per day</span>
+        <span>15 questions per day</span>
       </li>
       <li className="flex items-start gap-2">
         <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
@@ -419,7 +419,7 @@ export default function Home() {
       <p className="text-muted-foreground">For growing teams and scaling startups</p>
     </div>
     <div className="my-6">
-      <span className="text-4xl font-bold gradient-text">$49</span>
+      <span className="text-4xl font-bold gradient-text">$29</span>
       <span className="text-muted-foreground">/month</span>
     </div>
     <ul className="space-y-3 mb-8 flex-1">
