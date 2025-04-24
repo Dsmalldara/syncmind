@@ -267,25 +267,28 @@ export default function Home() {
             </div>
 
             <ScrollReveal delay={400}>
+              <p  className="flex items-center justify-center font-bold mb-6">
+                Click and checkout varoius ways you can upload, process and get results in chats
+              </p>
               <div className="max-w-4xl mx-auto rounded-xl border bg-background shadow-xl overflow-hidden gradient-border">
                 <Tabs defaultValue="upload" className="w-full">
                   <div className="border-b px-6">
                     <TabsList className="bg-transparent border-b-0 h-14">
                       <TabsTrigger
                         value="upload"
-                        className="data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none data-[state=active]:text-primary transition-colors"
+                        className="data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-4px mt-2 data-[state=active]:text-primary transition-colors"
                       >
                         Upload
                       </TabsTrigger>
                       <TabsTrigger
                         value="process"
-                        className="data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none data-[state=active]:text-primary transition-colors"
+                        className="data-[state=active]:border-b-2 data-[state=active]:border-primary  rounded-4px mt-2 data-[state=active]:text-primary transition-colors"
                       >
                         Process
                       </TabsTrigger>
                       <TabsTrigger
                         value="chat"
-                        className="data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none data-[state=active]:text-primary transition-colors"
+                        className="data-[state=active]:border-b-2 data-[state=active]:border-primary  rounded-4px mt-2 data-[state=active]:text-primary transition-colors"
                       >
                         Chat
                       </TabsTrigger>
