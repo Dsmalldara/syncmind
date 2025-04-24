@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 import { useState } from 'react';
+
 import { Shield, FileText, CheckCircle, Settings, Calendar } from 'lucide-react';
 import { 
   Accordion,
@@ -9,7 +11,7 @@ import {
 } from '@/components/ui/accordion';
 import { Button} from "@/components/ui/button"
 // Fixed FadeIn component that doesn't rely on tailwindcss-animate
-const FadeIn = ({ children, delay = 0, className = "" }) => (
+const FadeIn = ({ children, delay = 0, className = "" }:{children:any, delay:any, className:any}) => (
   <div 
     className={`transition-all duration-700 ${className}`}
     style={{ 
@@ -24,9 +26,17 @@ const FadeIn = ({ children, delay = 0, className = "" }) => (
 );
 
 // FAQ Item with icon
-const FAQItem = ({ icon: Icon, question, answer, delay }) => {
+interface FAQItemProps {
+  icon: React.ComponentType<{ size: number }>;
+  question: string;
+  answer: string;
+  delay: number;
+}
+
+ 
+export const FAQItem: React.FC<FAQItemProps> = ({ icon: Icon, question, answer, delay }) => {
   return (
-    <FadeIn delay={delay}>
+    <FadeIn delay={delay} className="">
       <AccordionItem value={question.replace(/\s+/g, '-').toLowerCase()} className="border border-muted rounded-lg mb-4 overflow-hidden">
         <AccordionTrigger className="px-6 py-4 hover:bg-muted/30 transition-colors data-[state=open]:bg-muted/20">
           <div className="flex items-center gap-3 text-left">
@@ -43,6 +53,7 @@ const FAQItem = ({ icon: Icon, question, answer, delay }) => {
     </FadeIn>
   );
 };
+
 
 export default function FAQSection() {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -107,30 +118,26 @@ export default function FAQSection() {
       </div>
       
       <div className="container max-w-4xl relative z-10">
-        <FadeIn>
-          <div className="text-center space-y-4 mb-12">
-            <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full font-medium mb-2">Knowledge Base</div>
-            <h2 className="text-3xl md:text-4xl font-bold text-primary">Frequently Asked Questions</h2>
-            <p className="text-xl text-muted-foreground">Everything you need to know about KnowledgeAI</p>
-          </div>
+        <FadeIn delay={0} className="text-center space-y-4 mb-12">
+          <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full font-medium mb-2">Knowledge Base</div>
+          <h2 className="text-3xl md:text-4xl font-bold text-primary">Frequently Asked Questions</h2>
+          <p className="text-xl text-muted-foreground">Everything you need to know about KnowledgeAI</p>
         </FadeIn>
 
-        <FadeIn delay={100}>
-          <div className="flex flex-wrap gap-2 justify-center mb-8">
-            {categories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => setActiveCategory(category.id)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                  activeCategory === category.id
-                    ? "bg-primary text-primary-foreground shadow-md"
-                    : "bg-muted hover:bg-muted/80 text-muted-foreground"
-                }`}
-              >
-                {category.name}
-              </button>
-            ))}
-          </div>
+        <FadeIn delay={100} className="flex flex-wrap gap-2 justify-center mb-8">
+          {categories.map((category) => (
+            <button
+              key={category.id}
+              onClick={() => setActiveCategory(category.id)}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                activeCategory === category.id
+                  ? "bg-primary text-primary-foreground shadow-md"
+                  : "bg-muted hover:bg-muted/80 text-muted-foreground"
+              }`}
+            >
+              {category.name}
+            </button>
+          ))}
         </FadeIn>
 
         <Accordion type="single" collapsible className="w-full">
@@ -145,22 +152,20 @@ export default function FAQSection() {
           ))}
         </Accordion>
         
-        <FadeIn delay={400}>
-    <div className="mt-12 rounded-lg border border-primary/20 bg-secondary p-6">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-        <div>
-          <h3 className="text-xl font-bold">Still have questions?</h3>
-          <p className="text-muted-foreground">We're here to help with any questions you have</p>
-        </div>
-        <Button 
-          size="lg" 
-          className="bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
-        >
-          Contact Support
-        </Button>
-      </div>
-    </div>
-  </FadeIn>
+        <FadeIn delay={400} className="mt-12 rounded-lg border border-primary/20 bg-secondary p-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div>
+              <h3 className="text-xl font-bold">Still have questions?</h3>
+              <p className="text-muted-foreground">We&apos;re here to help with any questions you have</p>
+            </div>
+            <Button 
+              size="lg" 
+              className="bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+            >
+              Contact Support
+            </Button>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 
 import { ArrowLeft, Bot } from "lucide-react"
 import Link from "next/link"
