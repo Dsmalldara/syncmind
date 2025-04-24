@@ -1,9 +1,10 @@
 {
-    "build": {
-      "env": {
-        "NODE_ENV": "production"
-      },
-      "command": "npm install --legacy-peer-deps && npm run build"
-    }
+    "version": 2,
+    "builds": [
+      {
+        "src": "next.config.js",
+        "use": "@vercel/next"
+      }
+    ]
   }
   
